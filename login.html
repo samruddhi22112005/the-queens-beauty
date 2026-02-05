@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Admin Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body
+    style="
+      background: black;
+      color: white;
+      font-family: Poppins;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    "
+  >
+    <div style="border: 2px solid #d4af37; padding: 30px; width: 300px">
+      <h2 style="color: #d4af37; text-align: center">Admin Login</h2>
+
+      <input
+        id="email"
+        type="email"
+        placeholder="Email"
+        style="width: 100%; padding: 10px; margin-bottom: 10px"
+      />
+      <input
+        id="password"
+        type="password"
+        placeholder="Password"
+        style="width: 100%; padding: 10px; margin-bottom: 15px"
+      />
+
+      <button
+        onclick="login()"
+        style="
+          width: 100%;
+          padding: 10px;
+          background: #d4af37;
+          border: none;
+          font-weight: bold;
+        "
+      >
+        Login
+      </button>
+
+      <p
+        id="error"
+        style="color: red; text-align: center; margin-top: 10px"
+      ></p>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyC10GtF_zwtg9_wVZDUzsbor7X7Ddui6Mo",
+        authDomain: "the-queens-beauty-parlour.firebaseapp.com",
+        projectId: "the-queens-beauty-parlour",
+        storageBucket: "the-queens-beauty-parlour.firebasestorage.app",
+        messagingSenderId: "73472407411",
+        appId: "1:73472407411:web:74ccce3790220017667706",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      window.login = () => {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        signInWithEmailAndPassword(auth, email, password)
+          .then(() => {
+            window.location.href = "admin.html";
+          })
+          .catch((err) => {
+            document.getElementById("error").innerText = err.message;
+          });
+      };
+    </script>
+  </body>
+</html>

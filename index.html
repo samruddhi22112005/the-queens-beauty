@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Queens Beauty Parlour | Hadapsar Pune</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Set min date for appointment -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dateInput = document.getElementById("appointment-date");
+        const today = new Date().toISOString().split("T")[0];
+        dateInput.min = today;
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header>
+      <h1>The Queen's Beauty Parlour</h1>
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#appintment">Appointment</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Close popup when clicking outside -->
+    <script>
+      document
+        .getElementById("aboutPopup")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeAbout();
+          }
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <img
+          src="images/logo.jpeg"
+          alt="Queens Beauty Parlour Logo"
+          class="logo"
+        />
+        <h1 class="parlour-name">The Queen's Beauty Parlour</h1>
+        <p class="tagline">Trusted by Clients. Defined by Quality.</p>
+      </div>
+    </section>
+    <!--About-->
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="images/owner.jpeg" alt="Owner - Queens Beauty Parlour" />
+        </div>
+
+        <div class="about-content">
+          <h2>About the Artist</h2>
+          <p>
+            Hi, I’m the founder of Queens Beauty Parlour. With years of
+            experience in bridal, party, and traditional makeup, my goal is to
+            make every client feel confident and beautiful.
+          </p>
+
+          <ul>
+            <li>✨ 5+ Years Experience</li>
+            <li>✨ Certified Makeup Artist</li>
+            <li>✨ 200+ Happy Clients</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section dark">
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="card">Bridal & Party Makeup</div>
+        <div class="card">Hair Cut & Styling</div>
+        <div class="card">Facial & Skin Care</div>
+        <div class="card">Waxing & Threading</div>
+        <div class="card">Manicure & Pedicure</div>
+        <div class="card">Nail Art</div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+      <h2>Our Work</h2>
+      <div class="scroll-container">
+        <div class="scroll-track">
+          <div class="work-card">
+            <img src="images/p1.jpeg" alt="Bridal" />
+            <span class="label">Bridal</span>
+          </div>
+
+          <div class="work-card">
+            <img src="images/p4.jpeg" alt="Party" />
+            <span class="label">Party</span>
+          </div>
+
+          <div class="work-card">
+            <img src="images/p3.jpeg" alt="Traditional" />
+            <span class="label">Maharastrian Bridal Look</span>
+          </div>
+
+          <div class="work-card">
+            <img src="images/p9.jpeg" alt="Traditional" />
+            <span class="label">Traditional Look</span>
+          </div>
+
+          <div class="work-card">
+            <img src="images/p7.jpeg" alt="Traditional" />
+            <span class="label">Hairstyle</span>
+          </div>
+
+          <div class="work-card">
+            <img src="images/p8.jpeg" alt="Traditional" />
+            <span class="label">Nail Art</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="reviews" class="reviews-section">
+      <h2>What Our Clients Say</h2>
+
+      <div class="reviews-container">
+        <div class="review-card">
+          <p>
+            “Excellent service & welocoming atmosphere.The staff at The Queen's
+            Beauty are skilled,professional & attentive. Highly satisfied with
+            the overall experience”
+          </p>
+          <div class="stars">★★★★★</div>
+          <h4>– Namrata Gaikwad</h4>
+        </div>
+
+        <div class="review-card">
+          <p>
+            “I know her since 3 years and her service is always best, also she
+            is my makeup artist at my wedding, everyone is giving so much
+            compliments about my makeup and hair. She is just too good.”
+          </p>
+          <div class="stars">★★★★★</div>
+          <h4>– Snehal Dhamal</h4>
+        </div>
+
+        <div class="review-card">
+          <p>
+            “Amazing service......Queen's Beauty staff are professional and
+            helping....To much satisfied with experience...”
+          </p>
+          <div class="stars">★★★★☆</div>
+          <h4>– Rutuja Thopate</h4>
+        </div>
+
+        <div class="review-card">
+          <p>“You're a true artist! My makeup was flawless🥰😍 …”</p>
+          <div class="stars">★★★★☆</div>
+          <h4>– Tanishka Kadam</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appointment Form -->
+    <section id="appointment" class="appointment">
+      <h2>Book Appointment</h2>
+
+      <div class="appointment-box">
+        <form id="appointmentForm" class="appointment-form">
+          <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            pattern="[A-Za-z\s]+"
+            required
+          />
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Mobile Number"
+            pattern="[0-9]{10}"
+            maxlength="10"
+            required
+          />
+
+          <div class="date-time-row">
+            <div class="field">
+              <label>Select Date</label>
+              <input type="date" id="appointment-date" required />
+            </div>
+            <div class="field">
+              <label>Select Time</label>
+              <input
+                type="time"
+                id="appointment-time"
+                min="11:00"
+                max="20:30"
+                step="1800"
+                required
+              />
+            </div>
+          </div>
+
+          <select id="service" required>
+            <option value="">Select Service</option>
+            <option>Bridal Makeup</option>
+            <option>Party Makeup</option>
+            <option>Hair Styling</option>
+            <option>Facial</option>
+          </select>
+
+          <button type="submit">Book Now</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <div class="contact-box">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p>
+            📍 The Queen's Beauty, <br />
+            Mangaldeep complex, near Sanjeevani hospital,<br />
+            Shiv Malhar Colony, Mahadev Nagar, Hadapsar, Pune
+          </p>
+          <p>⏰ Tuesday - Sunday | 11:00 AM - 8:30 PM</p>
+          <br />
+          <p>📞 +91 9766956401</p>
+
+          <div class="contact-social">
+            <a
+              href="https://wa.me/919766956401"
+              target="_blank"
+              class="whatsapp-link"
+            >
+              <i class="fab fa-whatsapp"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
+            <a
+              href="https://www.instagram.com/rutuja_makeupartis?igsh=MXR0czZ2dWJ3amgwaQ=="
+              target="_blank"
+              class="social-link insta"
+            >
+              <i class="fab fa-instagram"></i>
+              <span>@rutuja_makeupartis</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps?q=Manjri%20Rd%2C%20Hadapsar%2C%20Pune&output=embed&maptype=roadmap&hl=en&theme=dark"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Queens Beauty Parlour | Designed with Sam</p>
+      <a href="login.html" style="font-size: 12px; color: #444">Admin</a>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+
+    <script>
+      function scrollGallery(direction) {
+        const gallery = document.getElementById("gallery");
+        const card = document.querySelector(".work-card");
+        const gap = 30;
+        const scrollAmount = card.offsetWidth + gap;
+
+        gallery.scrollBy({
+          left: direction * scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    </script>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        serverTimestamp,
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "the-queens-beauty-parlour.firebaseapp.com",
+        projectId: "the-queens-beauty-parlour",
+        storageBucket: "the-queens-beauty-parlour.appspot.com",
+        messagingSenderId: "XXXX",
+        appId: "XXXX",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      window.db = db;
+    </script>
+
+    <script type="module">
+      import {
+        collection,
+        addDoc,
+        serverTimestamp,
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+      const form = document.getElementById("appointmentForm");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        try {
+          await addDoc(collection(window.db, "appointments"), {
+            name: document.getElementById("name").value,
+            phone: document.getElementById("phone").value,
+            date: document.getElementById("appointment-date").value,
+            time: document.getElementById("appointment-time").value,
+            service: document.getElementById("service").value,
+            createdAt: serverTimestamp(),
+          });
+
+          alert("Appointment booked successfully 💛");
+          form.reset();
+        } catch (error) {
+          alert("Error booking appointment");
+          console.error(error);
+        }
+      });
+    </script>
+  </body>
+</html>
